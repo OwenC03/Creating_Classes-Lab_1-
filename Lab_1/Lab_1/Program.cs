@@ -4,8 +4,7 @@
     {
         static void Main(string[] args)
         {
-            
-        }
+           
     }
 }   class Person
 {
@@ -49,4 +48,47 @@
         return "Person Id: " + personId + "\nFirst Name: " + firstName + "\nLast Name:" + lastName
             + "\nAge" + age + "\nIs Working:" + isWorking;
     }
+}
+class Relation
+{
+    char relationshipType;
+    public char RelationShipType { get => relationshipType; set => relationshipType = value; }
+    public Relation(char relation)
+    {
+        RelationShipType = relation;
+    }
+
+    enum Relationship
+    {
+        Sister,
+        Brother,
+        Mother,
+        Father
+    }
+
+    public void ShowRelationShip(Person person1, Person person2)
+    {
+        switch (relationshipType)
+        {
+            case 'S':
+                Console.WriteLine("Relationship between " + person1 + "and " + person2 + "is " + Relationship.Sister);
+                break;
+            case 'B':
+                Console.WriteLine("Relationship between " + person1 + "and " + person2 + "is " + Relationship.Brother);
+                break;
+            case 'M':
+                Console.WriteLine("Relationship between " + person1 + "and " + person2 + "is " + Relationship.Mother);
+                break;
+            case 'F':
+                Console.WriteLine("Relationship between " + person1 + "and " + person2 + "is " + Relationship.Father);
+                break;
+        }
+    }
+}
+class Main
+{
+    Person ian = new Person(1, "Ian", "Brooks", "Red", 30, true);
+    Person gina = new Person(2, "Gina", "James", "Green", 18, false);
+    Person mike = new Person(3, "Mike", "Ben", "Blue", 45, true);
+    Person mary = new Person(4, "Mary", "Beals", "Yellow", 28, true);
 }
